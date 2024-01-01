@@ -7,6 +7,7 @@ import {
 } from 'react-admin';
 import { dataProvider } from './dataProvider';
 import { UserEdit, UserList } from './users';
+import { CustomInput } from './custinput';
 
 //name
 export const App = () => (

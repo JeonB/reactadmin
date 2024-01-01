@@ -14,18 +14,20 @@ import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import { email, useListContext, useListController } from 'react-admin';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+// const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 export interface SimpleDialogProps {
   open: boolean;
   selectedValue: string;
   onClose: (value: string) => void;
   resource: string[];
+  email: string;
 }
 
 function SimpleDialog(props: SimpleDialogProps) {
   const { onClose, selectedValue, open, resource } = props;
-  const emails = resource.map(item => item.email);
+
+  const emails = resource && resource.map(item => item.email);
 
   console.log(emails);
 

@@ -21,9 +21,11 @@ import {
   TextField,
   useInput,
   useListController,
+  Form,
 } from 'react-admin';
 import SimpleDialogDemo from './userform';
-
+import { CustomInput } from './custinput';
+import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 export const UserEdit = () => {
   const CustomField = (props: InputProps) => {
     const handleChange = onChange => {
@@ -49,6 +51,7 @@ export const UserEdit = () => {
         <TextInput source="address.street" />
         <TextInput source="phone" />
         <TextInput source="website" />
+        {/* <CustomInput /> */}
       </SimpleForm>
     </Edit>
   );
@@ -112,10 +115,28 @@ export const UserList = () => {
     </Grid>
   );
 
+  const methods = useForm();
+
+  const onSubmit = data => console.log(data);
+  function NestedInput() {
+    const { register } = useFormContext(); // retrieve all hook methods
+
+    return <input {...register('test')} />;
+  }
   return (
     <Stack>
       <SimpleDialogDemo />
-      {/* <ListContextProvider value={listContext}>
+      <FormProvider {...methods}>
+        // pass all methods into the context
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <NestedInput />
+          <input type="submit" />
+        </form>
+      </FormProvider>
+
+      {/* 
+      {/* 
+      <ListContextProvider value={listContext}>
         <Typography variant="h3" sx={{ marginTop: 3 }}>
           UserList
         </Typography>
