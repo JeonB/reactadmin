@@ -5,6 +5,7 @@ import {
   Typography,
   CardActions,
   Stack,
+  Pagination,
 } from '@mui/material';
 import { SetStateAction, useState } from 'react';
 import {
@@ -16,6 +17,7 @@ import {
 } from 'react-admin';
 import SimpleDialogDemo from './userform';
 import { UseInputs } from './useInput';
+import { PostCreate } from './PostCreate';
 
 export const UserList = () => {
   const listContext = useListController();
@@ -78,6 +80,8 @@ export const UserList = () => {
           <TextField source="website" />
           <TextField source="company.name" />
         </Datagrid>
+        {/* <PostCreate /> */}
+        <Pagination />
       </ListContextProvider>
 
       <h2>해위</h2>
