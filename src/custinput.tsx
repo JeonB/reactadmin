@@ -39,14 +39,11 @@ export const CustomInput = props => {
   const selectRow = (id, resource, record) => {
     field.onChange(record.id);
     setRoleName(record.name);
-    console.log(record.name);
     setDialogOpen(false);
   };
 
   const buttonLabel = () => {
     let labelText = roleName;
-    console.log(labelText);
-
     return labelText;
   };
 

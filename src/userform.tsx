@@ -99,6 +99,7 @@ export default function SimpleDialogDemo() {
           open={open}
           onClose={handleClose}
           resource={listContext.data}
+          email={''}
         />
       )}
     </div>
