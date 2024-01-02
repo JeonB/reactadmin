@@ -6,7 +6,7 @@ export const UserEdit = () => {
     <Edit>
       <SimpleForm>
         <TextInput source="id" />
-        <TextInput source="username" />
+        <TextInput source="username" label="유저이름" />
         <TextInput source="email" />
         <TextInput source="address.street" />
         <TextInput source="phone" />
