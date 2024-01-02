@@ -29,8 +29,6 @@ function SimpleDialog(props: SimpleDialogProps) {
 
   const emails = resource && resource.map(item => item.email);
 
-  console.log(emails);
-
   const handleClose = () => {
     onClose(selectedValue);
   };
@@ -77,7 +75,6 @@ export default function SimpleDialogDemo() {
   const listContext = useListController();
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState('default value');
-  console.log(JSON.stringify(listContext));
   const handleClickOpen = () => {
     setOpen(true);
   };

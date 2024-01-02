@@ -26,7 +26,7 @@ export const CustomInput = props => {
   });
 
   const [isDialogOpen, setDialogOpen] = useState(false);
-  const [roleName, setRoleName] = React.useState('dd');
+  const [roleName, setRoleName] = React.useState('default value');
 
   const handleButtonClick = () => {
     setDialogOpen(true);
