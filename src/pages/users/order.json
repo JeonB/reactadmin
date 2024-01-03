@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "date": "2022-08-30",
+  "customer": "John Doe",
+  "items": [
+    {
+      "name": "Office Jeans",
+      "price": 45.99,
+      "quantity": 1
+    },
+    {
+      "name": "Black Elegance Jeans",
+      "price": 69.99,
+      "quantity": 2
+    },
+    {
+      "name": "Slim Fit Jeans",
+      "price": 55.99,
+      "quantity": 1
+    }
+  ]
+}

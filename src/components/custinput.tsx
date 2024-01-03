@@ -24,6 +24,8 @@ export const CustomInput = props => {
     ...rest,
     parse,
   });
+  // react-admin의 useInput은  source 속성은 반드시 필요.
+  // 그리고, Object와 함께 { id, field, fieldState, formState, isRequired } 반환
 
   const [isDialogOpen, setDialogOpen] = useState(false);
   const [roleName, setRoleName] = React.useState('default value');

@@ -86,11 +86,14 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>
-      <Typography variant="subtitle1" component="div">
+      <Typography variant="subtitle1" component="div" sx={{ marginTop: 2 }}>
         Selected: {selectedValue}
       </Typography>
       <br />
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button
+        variant="outlined"
+        onClick={handleClickOpen}
+        sx={{ marginBottom: 3 }}>
         Open simple dialog
       </Button>
       {listContext && (
