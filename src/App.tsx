@@ -5,6 +5,7 @@ import { users } from './pages/users';
 import { orders } from './pages/orders';
 import { Route } from 'react-router-dom';
 import { OrderList } from './pages/orders/OrderList';
+import { OrderEdit } from './pages/orders/OrderEdit';
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
@@ -12,9 +13,9 @@ export const App = () => (
     <Resource name="posts" {...posts} />
     <CustomRoutes>
       <Route
-        path="/orders"
+        path="/orders/:id"
         element={
-          <OrderList
+          <OrderEdit
             record={{
               id: 1,
               date: '2022-08-30',
@@ -38,7 +39,8 @@ export const App = () => (
               ],
             }}
           />
-        }></Route>
+        }
+      />
     </CustomRoutes>
   </Admin>
 );
