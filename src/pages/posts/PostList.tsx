@@ -65,17 +65,17 @@ export const PostList = () => {
         label="Create"
         color="secondary"
         onClick={handleClick}/> */}
-      <ListContextProvider value={listContext}>
-        <List actions={<PostListActions />} filters={postFilters}>
-          <Datagrid rowClick="edit">
-            <TextField source="userId" />
-            <TextField source="id" />
-            <TextField source="title" />
-            <TextField source="body" />
-            {/* <BoundedTextField source="text" /> */}
-          </Datagrid>
-        </List>
-      </ListContextProvider>
+      {/* <ListContextProvider value={listContext}> */}
+      <List actions={<PostListActions />} filters={postFilters}>
+        <Datagrid rowClick="show">
+          <TextField source="userId" />
+          <TextField source="id" />
+          <TextField source="title" />
+          <TextField source="body" />
+          {/* <BoundedTextField source="text" /> */}
+        </Datagrid>
+      </List>
+      {/* </ListContextProvider> */}
     </Stack>
   );
 };
