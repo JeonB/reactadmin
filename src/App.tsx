@@ -1,11 +1,9 @@
 import { Admin, CustomRoutes, Resource } from 'react-admin';
+import { Route } from 'react-router-dom';
 import { dataProvider } from './dataProvider';
+import { OrderEdit } from './pages/orders/OrderEdit';
 import { posts } from './pages/posts';
 import { users } from './pages/users';
-import { orders } from './pages/orders';
-import { Route } from 'react-router-dom';
-import { OrderList } from './pages/orders/OrderList';
-import { OrderEdit } from './pages/orders/OrderEdit';
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
