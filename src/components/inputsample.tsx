@@ -41,6 +41,7 @@ function InputSample() {
     },
   ]);
 
+  // useRef는 컴포넌트 안에서 조회 및 수정 할 수 있는 변수를 관리하는 데도 쓰임
   const nextId = useRef(4);
   const onCreate = () => {
     const user = {
