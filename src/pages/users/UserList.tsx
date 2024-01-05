@@ -28,6 +28,7 @@ import {
   RecordContextProvider,
 } from 'react-admin';
 import SimpleDialogDemo from '../../components/userform';
+import TestHook from '../../components/test';
 
 export const UserList = () => {
   const listContext = useListController();
@@ -66,7 +67,7 @@ export const UserList = () => {
         </Datagrid>
         <Pagination />
       </ListContextProvider>
-
+      <TestHook />
       {/* <RecordContextProvider value={order}>
         <OrderEdit />
       </RecordContextProvider> */}

@@ -5,6 +5,7 @@ import {
   Typography,
   CardActions,
   Stack,
+  Box,
 } from '@mui/material';
 import { useState, SetStateAction } from 'react';
 import {
@@ -58,6 +59,15 @@ export const PostList = () => {
     <TextInput source="q" label="Search" alwaysOn />,
     <ReferenceInput source="userId" label="User" reference="users" />,
   ];
+
+  const Aside = () => (
+    <Box sx={{ width: '200px', margin: '1em' }}>
+      <Typography variant="h6">Instructions</Typography>
+      <Typography variant="body2">
+        Posts will only be published once an editor approves them
+      </Typography>
+    </Box>
+  );
   return (
     <Stack>
       {/* <Button
@@ -66,7 +76,10 @@ export const PostList = () => {
         color="secondary"
         onClick={handleClick}/> */}
       {/* <ListContextProvider value={listContext}> */}
-      <List actions={<PostListActions />} filters={postFilters}>
+      <List
+        actions={<PostListActions />}
+        filters={postFilters}
+        aside={<Aside />}>
         <Datagrid rowClick="show">
           <TextField source="userId" />
           <TextField source="id" />
