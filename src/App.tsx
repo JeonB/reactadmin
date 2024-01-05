@@ -4,6 +4,7 @@ import { dataProvider } from './dataProvider';
 import { OrderEdit } from './pages/orders/OrderEdit';
 import { posts } from './pages/posts';
 import { users } from './pages/users';
+import InputSample from './components/inputsample';
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
@@ -39,6 +40,7 @@ export const App = () => (
           />
         }
       />
+      <Route path="/test" element={<InputSample />} />
     </CustomRoutes>
   </Admin>
 );

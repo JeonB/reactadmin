@@ -7,6 +7,9 @@ import {
   DateInput,
   Toolbar,
 } from 'react-admin';
+import { UnderlineInput } from '../../components';
+import { CssVarsProvider } from '@mui/joy';
+import { StyledEngineProvider } from '@mui/material';
 
 const validateUserCreation = values => {
   const errors = {}; // validate의 값은 항상 record를 입력값으로 갖는 함수여야 하며, error는 object형태여야 함
@@ -39,6 +42,11 @@ export const UserCreate = () => {
         <TextInput source="phone" />
         <TextInput source="website" />
         <TextInput source="company.name" /> */}
+        <StyledEngineProvider injectFirst>
+          <CssVarsProvider>
+            <UnderlineInput />
+          </CssVarsProvider>
+        </StyledEngineProvider>
       </SimpleForm>
     </Create>
   );
