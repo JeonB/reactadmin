@@ -3,7 +3,9 @@ import CreateUser from './CreateUser';
 import UserList from './UserList';
 
 function InputSample() {
-  function countActiveUsers(users) {
+  function countActiveUsers(
+    users: { id: number; username: string; email: string; active: boolean }[],
+  ) {
     console.log('활성 사용자 수를 세는중...');
     return users.filter(user => user.active).length;
   }
@@ -11,9 +13,10 @@ function InputSample() {
   const [inputs, setInputs] = useState({
     username: '',
     email: '',
+    active: false,
   });
-  const { username, email } = inputs;
-  const onChange = e => {
+  const { username, email, active } = inputs;
+  const onChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setInputs({
       ...inputs,
@@ -48,22 +51,24 @@ function InputSample() {
       id: nextId.current,
       username,
       email,
+      active,
     };
     setUsers(users.concat(user));
 
     setInputs({
       username: '',
       email: '',
+      active: false,
     });
     nextId.current += 1;
   };
 
-  const onRemove = id => {
+  const onRemove = (id: number) => {
     // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
     // = user.id 가 id 인 것을 제거함
     setUsers(users.filter(user => user.id !== id));
   };
-  const onToggle = id => {
+  const onToggle = (id: number) => {
     setUsers(
       users.map(user =>
         user.id === id ? { ...user, active: !user.active } : user,
